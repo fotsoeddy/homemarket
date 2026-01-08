@@ -10,10 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     {% comment %} Common JS Managers {% endcomment %}
-    <script src="{% static 'js/common/utils.js' %}"></script>
-    <script src="{% static 'js/common/toast_manager.js' %}"></script>
-    <script src="{% static 'js/common/loader_manager.js' %}"></script>
-    <script src="{% static 'js/common/password-toggle.js' %}"></script>
+    <script defer src="{% static 'js/common/utils.js' %}"></script>
+    <script defer src="{% static 'js/common/toast_manager.js' %}"></script>
+    <script defer src="{% static 'js/common/loader_manager.js' %}"></script>
+    <script defer src="{% static 'js/common/password-toggle.js' %}"></script>
     
     <script>
         // Initialize Utils used by other managers if needed, or ensuring gettext mock
@@ -25,7 +25,7 @@
                 {% for message in messages %}
                     toastManager.showToast({
                         message: "{{ message|escapejs }}",
-                        type: "{{ message.tags|default:'info' }}", // Maps directly if tags match (success, error->danger, warning, info)
+                        type: "{% if 'error' in message.tags %}danger{% elif 'success' in message.tags %}success{% elif 'warning' in message.tags %}warning{% else %}info{% endif %}",
                         position: 'top-right'
                     });
                 {% endfor %}
