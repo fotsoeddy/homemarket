@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Real Estate Investment | Home Market</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000080", // Navy
+                        "accent": "#D4AF37",  // Gold
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0f0f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F1D382 50%, #B8860B 100%);
+        }
+        .navy-gradient {
+            background: linear-gradient(135deg, #000040 0%, #000080 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 md:px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary dark:text-accent">
+<div class="size-8 flex items-center justify-center rounded-lg bg-primary text-white">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">Home Market</h2>
+</div>
+<div class="hidden md:flex items-center gap-9">
+<a class="text-primary font-bold text-sm leading-normal border-b-2 border-primary" href="#">Opportunities</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Portfolio</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Insights</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-4 md:gap-8 items-center">
+<label class="hidden lg:flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full bg-slate-100 dark:bg-slate-800">
+<div class="text-slate-500 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:outline-0 focus:ring-0 h-full placeholder:text-slate-500 px-4 pl-2 text-sm" placeholder="Search projects..." value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+<div class="hidden sm:block bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-accent" data-alt="Professional investor profile headshot" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAeyH8RMhuuRxY5CELEgIcnP-cOsTJF0aTpupK0VEKR_pkPwK719Ek-JLnpbEao4DgkxBneFjuv8728Uwl3e1D7c2ZCMZXbjQmmI6gWkxcpqf7Q6A4LwNCPNM-C9bmRKpi7RjGSnsgRS9dBmRhl0RWOzuootLfe9egwEe9CbBT5t9H18V4AnA3sVdXZ3hPPAnc5N2SA8YCZhC-e-vxmrqk_ay47-KQV7cvWjwDXx56D9LSmeIbhFuG7SqZFx6TXRRawonbMrKE9Rfw");'></div>
+</div>
+</header>
+<main class="flex flex-1 flex-col pb-12">
+<!-- Hero Section -->
+<div class="px-6 md:px-10 py-10 lg:py-16 navy-gradient text-white flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="flex-1 space-y-4 max-w-2xl">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-accent/20 border border-accent/30 text-accent text-xs font-bold uppercase tracking-widest">
+                            Premium Portfolio
+                        </div>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">Real Estate Investment</h1>
+<p class="text-slate-300 text-lg md:text-xl font-light">Discover high-yield premium projects curated for institutional and private investors. Secure your future with tangible assets.</p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="px-8 py-3 bg-accent text-primary font-bold rounded-lg hover:brightness-110 transition-all">View All Projects</button>
+<button class="px-8 py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-lg hover:bg-white/20 transition-all">Request Consultation</button>
+</div>
+</div>
+<div class="flex-1 w-full max-w-md bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 space-y-6">
+<div class="flex justify-between items-end border-b border-white/10 pb-4">
+<div>
+<p class="text-slate-400 text-sm uppercase font-bold tracking-tighter">Market Cap</p>
+<p class="text-3xl font-bold text-white">$2.4B</p>
+</div>
+<div class="text-right">
+<span class="text-emerald-400 font-bold flex items-center justify-end">
+<span class="material-symbols-outlined text-sm">trending_up</span> 14.2%
+                                </span>
+<p class="text-slate-500 text-xs">Annual Growth</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-slate-300">Total Funded Projects</span>
+<span class="font-bold">142</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-slate-300">Investors Worldwide</span>
+<span class="font-bold">12,400+</span>
+</div>
+<div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+<div class="bg-accent h-full w-3/4 rounded-full"></div>
+</div>
+<p class="text-xs text-center text-slate-400">Quarterly Target: 75% Achieved</p>
+</div>
+</div>
+</div>
+<!-- Stats Overview -->
+<div class="px-6 md:px-10 -mt-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Average ROI</p>
+<span class="material-symbols-outlined text-primary dark:text-accent">payments</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight">12.5%</p>
+<p class="text-emerald-600 text-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">arrow_upward</span> +1.2% vs last Q
+                            </p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Total Funded</p>
+<span class="material-symbols-outlined text-primary dark:text-accent">account_balance_wallet</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight">$640M</p>
+<p class="text-emerald-600 text-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">arrow_upward</span> +15.4% YoY
+                            </p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Active Projects</p>
+<span class="material-symbols-outlined text-primary dark:text-accent">domain</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight">24</p>
+<p class="text-slate-500 text-sm font-medium">Currently open for funding</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase tracking-wider">Successful Exits</p>
+<span class="material-symbols-outlined text-primary dark:text-accent">verified</span>
+</div>
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight">89</p>
+<p class="text-accent text-sm font-medium">98.2% Investor Satisfaction</p>
+</div>
+</div>
+</div>
+<!-- Section Heading -->
+<div class="px-6 md:px-10 mt-12 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="text-slate-900 dark:text-white text-3xl font-bold leading-tight">Featured High-Yield Projects</h2>
+<p class="text-slate-600 dark:text-slate-400 mt-2">Handpicked opportunities with projected double-digit returns.</p>
+</div>
+<div class="flex items-center gap-4">
+<select class="form-select rounded-lg border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm">
+<option>Filter by ROI</option>
+<option>10% - 12%</option>
+<option>12% - 15%</option>
+<option>15%+</option>
+</select>
+<select class="form-select rounded-lg border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm">
+<option>Project Status</option>
+<option>Funding Open</option>
+<option>Construction</option>
+<option>Sold</option>
+</select>
+</div>
+</div>
+<!-- Projects Grid -->
+<div class="px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project Card 1 -->
+<div class="group flex flex-col rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative h-56 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="Modern luxury high-rise apartment complex" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBiDP6zs2DJ69ZA9GQuLMUpaC_Giwh7Dz3LH1ZBNjHYXPIyC-DPD9a-IZexgXZlAdoMnCnNkrNcUEW7OhqRcwtjDSQNAhZMVVfVlSyjdWxcIalhhuSinvmfp46nJ7OHt83XSkHF_IcCd4z7EY4GEwx5VGOeEl2EOwDMRqRycrTeXvDgEC3lhGhZRm1nqANClBsiA3UKrrzzwXcaEfQb0FTVkqv4ALQq58RDRktmf570MJAuZS3BF6cNQTqQqoOxOQk4fYYgFicDHOE");'></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded">Residential</span>
+<span class="bg-accent text-primary text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded">Pre-Sale</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">The Meridian Residences</h3>
+<div class="text-right">
+<p class="text-accent text-lg font-bold leading-none">14.8%</p>
+<p class="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">Est. ROI</p>
+</div>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">Ultra-luxury waterfront development in the heart of the Financial District. Featuring sustainable architecture.</p>
+<div class="space-y-3 pt-2">
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500 font-medium">Timeline:</span>
+<span class="text-slate-900 dark:text-slate-200 font-bold">24 Months</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500 font-medium">Min. Investment:</span>
+<span class="text-slate-900 dark:text-slate-200 font-bold">$25,000</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[85%]"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] text-primary dark:text-accent font-bold">85% Funded</span>
+<span class="text-[10px] text-slate-500">$1.2M left</span>
+</div>
+</div>
+<button class="w-full py-3 bg-primary text-white dark:bg-slate-800 dark:hover:bg-primary transition-colors font-bold rounded-lg text-sm mt-2">Invest Now</button>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group flex flex-col rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative h-56 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="Glass office building exterior in sunset" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPn58tkJ7Nnws_RhHKQfnAyZAaT_03pQD9DucOh4RVp8zz7bM3A-vAdHcmGTmDq_4H0UbBO1P40XVb4t9vfYHLmZwxDa5qTvwXo2gsOTFVfctAxpcA2ZT276WRdVypb-8WZMcWbx4YTovOE9scZEUJpDJ7P5ty83XywlbXt085IoqE6LRDcv4eKUI1M5EV7564iiVluS4MA50HC_JwvF74QnYahsDceKjH53rs0cz5WiaA8kdFfqgFF4Azj3lBFrDF1paKqYZrvaU");'></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded">Commercial</span>
+<span class="bg-accent text-primary text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded">Stable</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">TechHub Corporate Tower</h3>
+<div class="text-right">
+<p class="text-accent text-lg font-bold leading-none">11.2%</p>
+<p class="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">Est. ROI</p>
+</div>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">Fully leased Class-A office space with long-term Fortune 500 tenants and guaranteed rental yield.</p>
+<div class="space-y-3 pt-2">
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500 font-medium">Timeline:</span>
+<span class="text-slate-900 dark:text-slate-200 font-bold">Permanent Asset</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500 font-medium">Min. Investment:</span>
+<span class="text-slate-900 dark:text-slate-200 font-bold">$10,000</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[40%]"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] text-primary dark:text-accent font-bold">40% Funded</span>
+<span class="text-[10px] text-slate-500">$8.4M left</span>
+</div>
+</div>
+<button class="w-full py-3 bg-primary text-white dark:bg-slate-800 dark:hover:bg-primary transition-colors font-bold rounded-lg text-sm mt-2">Invest Now</button>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="group flex flex-col rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative h-56 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700" data-alt="Modern suburban villas landscape" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCRqymSD7ZUdS_l-ZXHLx9XxLgzTOUxEVup7ExkL11FXwf8yY30blwxn2VTZROEB4wiau6ssChghLObomhRw7zlbnWhHDpVds_SYmDqN87jHQeciYyTCqE_aFr-ZPeD5CtN3D-DY-3Fznu2XCRjBLM0rMTDbKi4ND77JLb4_mbH4yruHp6kOmsLw5Im0fYou6NOPmEeOYkoCCNyksOsEy0ncIenXphuQDpomHxnlcaVEJTsdoj1XqUqqVfyNlZd1VRnb4glwgOdhYE");'></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded">Villas</span>
+<span class="bg-accent text-primary text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded">High Growth</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Azure Sky Villas</h3>
+<div class="text-right">
+<p class="text-accent text-lg font-bold leading-none">18.5%</p>
+<p class="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">Est. ROI</p>
+</div>
+</div>
+<p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">Boutique vacation home development in high-demand tourism hub. High short-term rental potential.</p>
+<div class="space-y-3 pt-2">
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500 font-medium">Timeline:</span>
+<span class="text-slate-900 dark:text-slate-200 font-bold">36 Months</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="text-slate-500 font-medium">Min. Investment:</span>
+<span class="text-slate-900 dark:text-slate-200 font-bold">$50,000</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[95%]"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] text-primary dark:text-accent font-bold">95% Funded</span>
+<span class="text-[10px] text-slate-500">Waitlist Only</span>
+</div>
+</div>
+<button class="w-full py-3 bg-slate-200 text-slate-500 dark:bg-slate-800 dark:text-slate-400 cursor-not-allowed font-bold rounded-lg text-sm mt-2">Closed for Funding</button>
+</div>
+</div>
+</div>
+<!-- Comparison / Timeline Section -->
+<div class="px-6 md:px-10 mt-16">
+<div class="bg-slate-900 rounded-2xl overflow-hidden flex flex-col lg:flex-row">
+<div class="lg:w-1/3 p-10 space-y-6 flex flex-col justify-center">
+<h2 class="text-3xl font-bold text-white">Investment Lifecycle</h2>
+<p class="text-slate-400">Our structured process ensures transparency and security at every phase of your capital growth.</p>
+<div class="space-y-4">
+<div class="flex gap-4">
+<div class="size-8 rounded-full bg-accent flex items-center justify-center text-primary font-bold shrink-0">1</div>
+<p class="text-white text-sm"><span class="font-bold">Sourcing:</span> Expert identification of undervalued properties.</p>
+</div>
+<div class="flex gap-4">
+<div class="size-8 rounded-full bg-accent flex items-center justify-center text-primary font-bold shrink-0">2</div>
+<p class="text-white text-sm"><span class="font-bold">Vetting:</span> Strict legal and financial due diligence.</p>
+</div>
+<div class="flex gap-4">
+<div class="size-8 rounded-full bg-accent flex items-center justify-center text-primary font-bold shrink-0">3</div>
+<p class="text-white text-sm"><span class="font-bold">Development:</span> Active management of value-add strategies.</p>
+</div>
+<div class="flex gap-4">
+<div class="size-8 rounded-full bg-accent flex items-center justify-center text-primary font-bold shrink-0">4</div>
+<p class="text-white text-sm"><span class="font-bold">Exit:</span> Strategic disposal for maximum investor return.</p>
+</div>
+</div>
+</div>
+<div class="lg:w-2/3 bg-slate-800/50 p-10 flex items-center justify-center">
+<!-- Timeline Graphic Mockup -->
+<div class="relative w-full max-w-2xl py-12">
+<div class="absolute top-1/2 left-0 right-0 h-1 bg-white/10 -translate-y-1/2"></div>
+<div class="flex justify-between relative z-10">
+<div class="flex flex-col items-center gap-4">
+<div class="size-12 rounded-full gold-gradient border-4 border-slate-900 flex items-center justify-center shadow-xl">
+<span class="material-symbols-outlined text-primary">search</span>
+</div>
+<div class="text-center">
+<p class="text-white font-bold text-xs">Acquisition</p>
+<p class="text-slate-500 text-[10px]">Month 0-3</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="size-12 rounded-full gold-gradient border-4 border-slate-900 flex items-center justify-center shadow-xl opacity-80">
+<span class="material-symbols-outlined text-primary">architecture</span>
+</div>
+<div class="text-center">
+<p class="text-white font-bold text-xs">Permitting</p>
+<p class="text-slate-500 text-[10px]">Month 4-8</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="size-12 rounded-full gold-gradient border-4 border-slate-900 flex items-center justify-center shadow-xl opacity-60">
+<span class="material-symbols-outlined text-primary">engineering</span>
+</div>
+<div class="text-center">
+<p class="text-white font-bold text-xs">Construction</p>
+<p class="text-slate-500 text-[10px]">Month 9-24</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="size-12 rounded-full gold-gradient border-4 border-slate-900 flex items-center justify-center shadow-xl opacity-40">
+<span class="material-symbols-outlined text-primary">currency_exchange</span>
+</div>
+<div class="text-center">
+<p class="text-white font-bold text-xs">Divestment</p>
+<p class="text-slate-500 text-[10px]">Month 25+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 px-6 md:px-10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+<div class="col-span-2 space-y-4">
+<div class="flex items-center gap-3 text-primary dark:text-accent">
+<span class="material-symbols-outlined text-3xl">account_balance</span>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold">Home Market</h2>
+</div>
+<p class="text-slate-500 text-sm max-w-xs leading-relaxed">The premier destination for secure real estate investments. Empowering investors with transparency and high-performance assets.</p>
+<div class="flex gap-4">
+<div class="size-8 rounded bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">public</span>
+</div>
+<div class="size-8 rounded bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-sm">mail</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="text-slate-900 dark:text-white font-bold mb-4 uppercase text-xs tracking-widest">Platform</h4>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary" href="#">Opportunities</a></li>
+<li><a class="hover:text-primary" href="#">How it Works</a></li>
+<li><a class="hover:text-primary" href="#">Portfolio Tracking</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-slate-900 dark:text-white font-bold mb-4 uppercase text-xs tracking-widest">About</h4>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary" href="#">Company</a></li>
+<li><a class="hover:text-primary" href="#">Our Team</a></li>
+<li><a class="hover:text-primary" href="#">Sustainability</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-slate-900 dark:text-white font-bold mb-4 uppercase text-xs tracking-widest">Support</h4>
+<ul class="space-y-2 text-sm text-slate-500">
+<li><a class="hover:text-primary" href="#">Help Center</a></li>
+<li><a class="hover:text-primary" href="#">Risk Disclosure</a></li>
+<li><a class="hover:text-primary" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-400">© 2024 Home Market Inc. All rights reserved.</p>
+<div class="flex gap-6 text-xs text-slate-400">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Cookie Settings</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

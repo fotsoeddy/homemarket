@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000080", // Navy
+                        "accent": "#C5A059",  // Gold
+                        "background-light": "#f5f5f8",
+                        "background-dark": "#0f0f23",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Explore Properties | Home Market</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- Header Navigation -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 px-4 md:px-10 py-3">
+<div class="max-w-7xl mx-auto flex items-center justify-between gap-8">
+<div class="flex items-center gap-8 shrink-0">
+<div class="flex items-center gap-2 text-primary dark:text-accent">
+<span class="material-symbols-outlined text-3xl font-bold">corporate_fare</span>
+<h2 class="text-primary dark:text-slate-100 text-xl font-bold tracking-tight">Home Market</h2>
+</div>
+<div class="hidden lg:flex items-center bg-primary/5 dark:bg-primary/20 rounded-xl px-4 py-2 w-80">
+<span class="material-symbols-outlined text-primary/60 dark:text-slate-400">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-primary/40" placeholder="Search luxury estates..." type="text"/>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-semibold text-primary border-b-2 border-accent pb-1" href="#">Buy</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Rent</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Sell</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Agents</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-xl bg-primary/5 hover:bg-primary/10 transition-colors text-primary">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hidden sm:flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-xl font-bold text-sm shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">person</span>
+                    Sign In
+                </button>
+<div class="size-10 rounded-full bg-accent/20 border-2 border-accent overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Professional headshot of a luxury real estate client" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQJR54YQArqpxPTB9M3K64aX847qEMMrah8TCdibzNMd1araJo0wP4kwHJd0Hu3Pvucgqg2elNVvQ2Fy4H28piDJfKbt0tm7iFCvj4dfVv3NT0q4YewL3s2lAYGbYiNhoPoo_M1Isv2RroXc_Lls9VNtv-ZwetTavQpi_GFPrqcrhzceWY9gwJutq6Ymcldnlwy4HncmEYB_lPXFYw7XIFEEibpltcX9hzgnJHje3u_eHQe28agfiZqLP-PNAXRa-LY5wUn1pI99A"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 md:px-10 py-8">
+<div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="text-4xl font-black text-primary dark:text-slate-100 tracking-tight">Explore Properties</h1>
+<p class="text-slate-600 dark:text-slate-400 mt-2">Discover 1,240+ premium listings in your preferred locations.</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-primary/20 border border-primary/10 rounded-lg text-sm font-semibold">
+<span class="material-symbols-outlined text-sm">sort</span>
+                    Sort by: Featured
+                </button>
+</div>
+</div>
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-72 shrink-0 space-y-6">
+<div class="bg-white dark:bg-background-dark/50 p-6 rounded-xl border border-primary/5 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">tune</span>
+                            Filters
+                        </h3>
+<button class="text-xs font-bold text-accent uppercase tracking-wider">Reset</button>
+</div>
+<div class="space-y-8">
+<!-- Location -->
+<div class="space-y-3">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">map</span>
+<input class="w-full pl-9 pr-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border-primary/10 rounded-lg focus:ring-accent focus:border-accent" placeholder="City, Zip or Area" type="text"/>
+</div>
+</div>
+<!-- Price Range -->
+<div class="space-y-4">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Price Range</label>
+<div class="px-2">
+<div class="h-1.5 w-full bg-slate-200 dark:bg-slate-700 rounded-full relative">
+<div class="absolute left-1/4 right-1/4 h-full bg-accent rounded-full"></div>
+<div class="absolute left-1/4 top-1/2 -translate-y-1/2 size-4 bg-white border-2 border-accent rounded-full shadow-md cursor-pointer"></div>
+<div class="absolute right-1/4 top-1/2 -translate-y-1/2 size-4 bg-white border-2 border-accent rounded-full shadow-md cursor-pointer"></div>
+</div>
+</div>
+<div class="flex justify-between items-center text-xs font-medium text-slate-500">
+<span>$500k</span>
+<span>$5.5M+</span>
+</div>
+</div>
+<!-- Property Type -->
+<div class="space-y-3">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Property Type</label>
+<div class="grid grid-cols-2 gap-2">
+<button class="px-3 py-2 text-xs font-semibold rounded-lg bg-primary text-white">Mansions</button>
+<button class="px-3 py-2 text-xs font-semibold rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-600 border border-primary/5">Apartments</button>
+<button class="px-3 py-2 text-xs font-semibold rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-600 border border-primary/5">Villas</button>
+<button class="px-3 py-2 text-xs font-semibold rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-600 border border-primary/5">Penthouses</button>
+</div>
+</div>
+<!-- Beds & Baths -->
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Bedrooms</label>
+<div class="flex gap-1">
+<button class="flex-1 py-1.5 text-xs font-bold rounded border border-primary/10 hover:border-accent">1+</button>
+<button class="flex-1 py-1.5 text-xs font-bold rounded border border-primary/10 hover:border-accent">2+</button>
+<button class="flex-1 py-1.5 text-xs font-bold rounded bg-primary text-white border-primary">3+</button>
+<button class="flex-1 py-1.5 text-xs font-bold rounded border border-primary/10 hover:border-accent">4+</button>
+<button class="flex-1 py-1.5 text-xs font-bold rounded border border-primary/10 hover:border-accent">5+</button>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Bathrooms</label>
+<div class="flex gap-1">
+<button class="flex-1 py-1.5 text-xs font-bold rounded border border-primary/10 hover:border-accent">1+</button>
+<button class="flex-1 py-1.5 text-xs font-bold rounded bg-primary text-white border-primary">2+</button>
+<button class="flex-1 py-1.5 text-xs font-bold rounded border border-primary/10 hover:border-accent">3+</button>
+<button class="flex-1 py-1.5 text-xs font-bold rounded border border-primary/10 hover:border-accent">4+</button>
+</div>
+</div>
+</div>
+<button class="w-full py-3 bg-accent text-white font-bold rounded-xl shadow-lg shadow-accent/20 hover:bg-accent/90 transition-all flex items-center justify-center gap-2">
+                            Apply Filters
+                        </button>
+</div>
+</div>
+<!-- Advertisement Card -->
+<div class="relative overflow-hidden rounded-xl bg-primary p-6 text-white group">
+<div class="relative z-10">
+<span class="text-accent text-[10px] font-black uppercase tracking-widest bg-accent/20 px-2 py-1 rounded">Premium</span>
+<h4 class="mt-4 font-bold text-lg leading-tight">Expert Consultation</h4>
+<p class="text-slate-300 text-sm mt-2">Get personalized investment advice from our top-tier agents.</p>
+<button class="mt-4 text-sm font-bold border-b-2 border-accent inline-block">Book Now</button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-20 transform rotate-12 transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-[120px]">apartment</span>
+</div>
+</div>
+</aside>
+<!-- Property Grid -->
+<div class="flex-1">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Property Card 1 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-primary/5 group">
+<div class="relative h-64 overflow-hidden">
+<img alt="Luxury Villa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Modern luxury villa with infinity pool at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClpDis_oe-pNR6lhq9xBlY6yvrmr81kseM9mV6uGrnbArdH42cllSzeECTcf55gnL0dkABZEgG_w5MevgjhMfGz94jpz0duunDl_VZX_wVekB_S2qwDpzF1qavCDH5JcWZbUVmUuI2imzk7PpLMeQd12qyooiv1fvy-0AWB3NXl4Y0gMLlLmShBU6CwPbuLLulz4jzWSovVtDQTOjRs6BEyUVHDfvULNue1ce5P1XzKvqaeBAc7ZZebV2terlGGQqEl65Uqt98OkI"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary/90 text-white text-[10px] font-bold px-2 py-1 rounded-md backdrop-blur-sm">FEATURED</span>
+<span class="bg-accent text-white text-[10px] font-bold px-2 py-1 rounded-md">NEW</span>
+</div>
+<button class="absolute top-4 right-4 size-8 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute bottom-4 left-4">
+<p class="text-white font-black text-2xl drop-shadow-lg">$4,250,000</p>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 text-accent mb-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-xs font-bold uppercase tracking-wider">Beverly Hills, CA</span>
+</div>
+<h3 class="font-bold text-lg text-primary dark:text-slate-100 mb-4 truncate">The Azure Estate</h3>
+<div class="flex items-center justify-between py-4 border-y border-primary/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">bed</span>
+<span class="text-sm font-semibold text-slate-600">5</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">bathtub</span>
+<span class="text-sm font-semibold text-slate-600">6</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">square_foot</span>
+<span class="text-sm font-semibold text-slate-600">8,400 <span class="text-[10px]">sqft</span></span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-slate-200 border border-primary/10 overflow-hidden">
+<img alt="Agent" class="w-full h-full object-cover" data-alt="Headshot of a professional real estate agent" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtsdw94KPpGKxdmjuyyQjCVFll5ekOvzVTZ3ImVRvaHYlT2FVtsIdLqWVIjvRN4dyfj6Wd-be5u2q-g1usa--JprJvN1WaN1a9gHylCbToXn2-KmM1Zcm-wUqtfTU8TG9-cHs8ohh1z7dGY4oxmDTy5tLiDjAw2cQxHjvrosmixJYfqCOvy6fKnNifqaHZIxWzWqoLbffcXueEQnFWvVOBvHL4vAeWvz7LXVigJKkLGdDAmUryxzSTzrS3XY-LleLKqq9dXyYpROQ"/>
+</div>
+<span class="text-xs font-medium text-slate-500">Sarah Jenkins</span>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                                    View Details
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-primary/5 group">
+<div class="relative h-64 overflow-hidden">
+<img alt="Modern Mansion" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Ultra modern glass mansion with manicured garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCieEh0pAUE03E8Aumpjc3KiQy6MQfy-3OKwefMm9Sb3rgwlLoIGMKRxyvaXsHaMUiow5djJs7KxiEq1BTk7zb_sLgyuRIvWR-1vU6ECcD8TBfe-No26_jNR8_UcWKZwb3Yt2_WkuTsq1rywbjFamLGm1gzUx8t9BIMpu01dV6O8951vAvYjx_I-sPgxpG4gN-fOIFsA4xvrJ-LO1YLdHooYOEMORklMFA0GftesY3Jg9j9BvQ8y1ZYuZjMOwyrmkTQvLuTte5y1M4"/>
+<button class="absolute top-4 right-4 size-8 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute bottom-4 left-4">
+<p class="text-white font-black text-2xl drop-shadow-lg">$2,890,000</p>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 text-accent mb-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-xs font-bold uppercase tracking-wider">Miami Beach, FL</span>
+</div>
+<h3 class="font-bold text-lg text-primary dark:text-slate-100 mb-4 truncate">Skyline Penthouse</h3>
+<div class="flex items-center justify-between py-4 border-y border-primary/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">bed</span>
+<span class="text-sm font-semibold text-slate-600">3</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">bathtub</span>
+<span class="text-sm font-semibold text-slate-600">4</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">square_foot</span>
+<span class="text-sm font-semibold text-slate-600">3,200 <span class="text-[10px]">sqft</span></span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-slate-200 border border-primary/10 overflow-hidden">
+<img alt="Agent" class="w-full h-full object-cover" data-alt="Professional real estate specialist profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhbXjxIdxYAFwlHjnGnfnrLMzFiY-uWSFcTSzDxuUYPrJi1lJuC4E4amik3EXXZewIXMARUT78EOqgRTOGUdwfbKj12WtKJ3QovQLpz78oo0qVuuX47WS4z29guB-uBXQ5CjlU86QLwv_IZ-6BYIVGLnm792iqh57VoQvZYSUzgEvc2dkl6HPU5eMDpqBNCrTroiTg6x1W7jXUkz8YCITwTm7sYavd9EieNuwchPZXkr1uVeBJhkTF7Uo3dIw0jVwNjSmRr5eT66A"/>
+</div>
+<span class="text-xs font-medium text-slate-500">David Ross</span>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                                    View Details
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Property Card 3 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-primary/5 group">
+<div class="relative h-64 overflow-hidden">
+<img alt="Contemporary Estate" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Contemporary waterfront estate with glass balconies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF8ggznNxt7z0OEaMUwB1rrgj79G0VYnHkgx-_f-pxQ0y4mL7mKiMN6byDmPr_Av0rC03Eiy7l6XiAWjta6N1TpbrPcdEIQRFV8VXIYn2f4RmhTo4UJh5Iuuk9niZbeNZvlEacxGGd48CZJgxJ8Qo2eqKZvBt5wyd5knJJmx9Q2IfuyBzXrZVqrugm6Ay5HrhyQharE3SupYJFq0IAu2H0rp8pnAKiAjPxMAzqaTSbRx6WnC0ngmfJCLX79qJkfw3G4lNHECvIxmE"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 text-white text-[10px] font-bold px-2 py-1 rounded-md backdrop-blur-sm">FEATURED</span>
+</div>
+<button class="absolute top-4 right-4 size-8 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-colors">
+<span class="material-symbols-outlined text-xl text-primary">favorite</span>
+</button>
+<div class="absolute bottom-4 left-4">
+<p class="text-white font-black text-2xl drop-shadow-lg">$5,100,000</p>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 text-accent mb-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-xs font-bold uppercase tracking-wider">Malibu, CA</span>
+</div>
+<h3 class="font-bold text-lg text-primary dark:text-slate-100 mb-4 truncate">Ocean Breeze Manor</h3>
+<div class="flex items-center justify-between py-4 border-y border-primary/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">bed</span>
+<span class="text-sm font-semibold text-slate-600">6</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">bathtub</span>
+<span class="text-sm font-semibold text-slate-600">7</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">square_foot</span>
+<span class="text-sm font-semibold text-slate-600">12,500 <span class="text-[10px]">sqft</span></span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-slate-200 border border-primary/10 overflow-hidden">
+<img alt="Agent" class="w-full h-full object-cover" data-alt="Portrait of an experienced luxury realtor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ1AMon0X5Sf0CDz9-jDsKEUxYc8XUuvSRnk587qJiJ22zzJGgCB5l-S2QPOa8itCCD43PTbthO58aGgOFb_mgATMn48r0vXlxFheDQFopBZYdsMnN2E6eM4IOcVwfX8FO-bR6pyhhe-n_ErS7wuuqlu_r37IgJt3iK8oW-z8KWZ_UM5tALhFxFQL3caN1bULhruiIEkRtlVCPcy_Yls5uILtIlDH6KwFQY6OAG07XkoXIIYe9RKS0KUGlODb_feQSnfYcH9wpZNg"/>
+</div>
+<span class="text-xs font-medium text-slate-500">James Wilson</span>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                                    View Details
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Property Card 4 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-primary/5 group">
+<div class="relative h-64 overflow-hidden">
+<img alt="Luxury Home" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Minimalist luxury home with large glass windows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6zgEYyAPdRNmCHgXrSocNkt2dKTcWPVUhjwejp0foXZ1FqZGtiZBfDdLELjtAsC5p3rGFmsSLzZF_ylvWcPLPJtJYgC1prWnl8RxbKIRJWEbyDIiXpchZJNHjqdeYAc5FocvfZw5YKrnLs5sGfWMxux6CnYz0TL2TwJDOmAGuyCcm1y198lV0tKSVoP5e3p4ae2Q9fx7jl-JTYtbYf6WFo9Rb46IoccaIpPa3rVPCLRfvqxYvhOY3ijnF-4snJH5NTNI5eMgV2hc"/>
+<button class="absolute top-4 right-4 size-8 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute bottom-4 left-4">
+<p class="text-white font-black text-2xl drop-shadow-lg">$1,750,000</p>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 text-accent mb-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-xs font-bold uppercase tracking-wider">Austin, TX</span>
+</div>
+<h3 class="font-bold text-lg text-primary dark:text-slate-100 mb-4 truncate">The Zen Residence</h3>
+<div class="flex items-center justify-between py-4 border-y border-primary/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">bed</span>
+<span class="text-sm font-semibold text-slate-600">4</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">bathtub</span>
+<span class="text-sm font-semibold text-slate-600">3.5</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">square_foot</span>
+<span class="text-sm font-semibold text-slate-600">4,100 <span class="text-[10px]">sqft</span></span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-slate-200 border border-primary/10 overflow-hidden">
+<img alt="Agent" class="w-full h-full object-cover" data-alt="Female realtor portrait for premium properties" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBglYbJ9CAW1FJGwrcCLPSV0MS3U5DA86tTnDeRLrDuK6eeeiXVoNGeC7lpkVFpXc4vnEHU7Pf27Db9iQUa8jbo4eelAgYaPVXnQgC4cEYGloAOdVlmXgyuDF7fhdcFig89iBfHuKink5weyNabB3IHRt3gw8zFP4twWL3FZ7zeeJ5OoSxdXNEj30LuK6epZb1Y7f1gqOnxRCUWkGNeDpL1-qByQ8ceH0sRoWwqK3R2tGxeFpvGsAir-8Zv2O25Xlsahonzi6nda1A"/>
+</div>
+<span class="text-xs font-medium text-slate-500">Elena Gomez</span>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                                    View Details
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Property Card 5 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-primary/5 group">
+<div class="relative h-64 overflow-hidden">
+<img alt="Classic Luxury Villa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Stately classic mansion with large pool and landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsU0xUM7GUbIJiVF6MRhEo1DDKIAHcOavJOATBn3R6b2lgTs8xgVdrVxzVxmPPcyeQTCPzA-G0nzo98ByZOlAjwdWmKnrGht166e322HB0_-B1GOrwSgQ4BIzqKg9yG0oXdqVtlalaaGzNg-00wAXkyhmx5DluGa186nsksw5RyI23gArjeSYjT2cHrII58Q_amwCbZ1fjGIydqzM3cL4MwnIMuEbIglR6u_sMlFKCUGkE3-hVc7F3dY1_XzQmRmUJOoU-P-IRnDM"/>
+<button class="absolute top-4 right-4 size-8 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute bottom-4 left-4">
+<p class="text-white font-black text-2xl drop-shadow-lg">$3,400,000</p>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 text-accent mb-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-xs font-bold uppercase tracking-wider">Scarsdale, NY</span>
+</div>
+<h3 class="font-bold text-lg text-primary dark:text-slate-100 mb-4 truncate">Oakwood Manor</h3>
+<div class="flex items-center justify-between py-4 border-y border-primary/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">bed</span>
+<span class="text-sm font-semibold text-slate-600">5</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">bathtub</span>
+<span class="text-sm font-semibold text-slate-600">5</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">square_foot</span>
+<span class="text-sm font-semibold text-slate-600">6,700 <span class="text-[10px]">sqft</span></span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-slate-200 border border-primary/10 overflow-hidden">
+<img alt="Agent" class="w-full h-full object-cover" data-alt="Portrait of a successful female luxury real estate advisor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDAc3botMd9pGQvWZWLzD_Cxb6EUcF_VNmGhAM4g72oTlrBUVsSRZETAC_oTUCQnQB85raTN8uR8oiMUYtBctRcRjt3SwxtLI-Da_qDmLJv_TwNdXL6VxbPC-_zHiGDtv16Pi033tjlJNF28jKRRsqho0-Ir-srd-H7RC4q81zVHe9mYO6ckDgeMfQy2FcWvg7daZGrUU1Olu4R6q1QsyPJR4t5HpX5a8_beNRrHhkNE2HRMdgDsBjD4L5CMpFd4Grmb_xyEf7a0Q"/>
+</div>
+<span class="text-xs font-medium text-slate-500">Michelle Clark</span>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                                    View Details
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Property Card 6 -->
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow border border-primary/5 group">
+<div class="relative h-64 overflow-hidden">
+<img alt="Designer Home" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Unique architectural designer home in a forest setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK_b1SDDQ7KOMveY-a9VBjZXrh8eN29I6TXRc70h3otOzAbA_upBkK-PuGgpXY4cbh9Xb0WDC680xm10UohAm324rrbue2BxI7I-73MNwPFB0lcNB7c4yij8kofK_rmnxTRmS92skndGWVsO0FQHBDSvuh3jGtayKXzpeAb3IeZqx0gTLoNMSCrOHN20LOdKA4Fa4gRPNBKMzSUSGwzpBo3I310ZkcuAVo7Ynhc0BLjXNPr_3ClXBw3wwKIU8_s4saUg2qmkYpl_o"/>
+<button class="absolute top-4 right-4 size-8 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+<div class="absolute bottom-4 left-4">
+<p class="text-white font-black text-2xl drop-shadow-lg">$2,100,000</p>
+</div>
+</div>
+<div class="p-5">
+<div class="flex items-center gap-1 text-accent mb-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-xs font-bold uppercase tracking-wider">Aspen, CO</span>
+</div>
+<h3 class="font-bold text-lg text-primary dark:text-slate-100 mb-4 truncate">Mountain Retreat</h3>
+<div class="flex items-center justify-between py-4 border-y border-primary/5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">bed</span>
+<span class="text-sm font-semibold text-slate-600">4</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">bathtub</span>
+<span class="text-sm font-semibold text-slate-600">3</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">square_foot</span>
+<span class="text-sm font-semibold text-slate-600">5,500 <span class="text-[10px]">sqft</span></span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-8 rounded-full bg-slate-200 border border-primary/10 overflow-hidden">
+<img alt="Agent" class="w-full h-full object-cover" data-alt="Senior real estate broker portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOvMSmqkeVkRVgHABeQjiBLVp3G3ElhUrwEpQYOKbVrlHNrt9eeuhrpKHTWYOhiowLz7RMieV70rC-TpFRhQDRAQzs0zU1Xx6aFcu7YQPsR59JIiw9DQxUnnzSDhDPFk4IIFUIS4urwe0qIId4SPmlivMaYeXJsxWplKR8Fh5urZvwo9hFUBEVZW1HOTMyjtaHOYJ7RFR87lJfvbXCS5IcCppshLDK02ylWRFZxCt8syuqL9PYpVDO8ZPgcM7eIJ-WQXYjzV3j_rU"/>
+</div>
+<span class="text-xs font-medium text-slate-500">Thomas Miller</span>
+</div>
+<button class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+                                    View Details
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex justify-center items-center gap-2">
+<button class="size-10 rounded-lg flex items-center justify-center border border-primary/10 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="size-10 rounded-lg flex items-center justify-center bg-primary text-white font-bold">1</button>
+<button class="size-10 rounded-lg flex items-center justify-center border border-primary/10 text-slate-600 hover:bg-primary/5 transition-colors">2</button>
+<button class="size-10 rounded-lg flex items-center justify-center border border-primary/10 text-slate-600 hover:bg-primary/5 transition-colors">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="size-10 rounded-lg flex items-center justify-center border border-primary/10 text-slate-600 hover:bg-primary/5 transition-colors">12</button>
+<button class="size-10 rounded-lg flex items-center justify-center border border-primary/10 text-primary hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<footer class="mt-20 bg-primary text-white py-16">
+<div class="max-w-7xl mx-auto px-4 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 text-accent mb-6">
+<span class="material-symbols-outlined text-3xl font-bold">corporate_fare</span>
+<h2 class="text-xl font-bold tracking-tight text-white">Home Market</h2>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">Defining luxury living through exclusive properties and unparalleled service since 1995. Your journey home begins with us.</p>
+</div>
+<div>
+<h4 class="font-bold text-accent mb-6 uppercase tracking-wider text-xs">Navigation</h4>
+<ul class="space-y-4 text-sm text-slate-300">
+<li><a class="hover:text-accent transition-colors" href="#">Search Houses</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Luxury Listings</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Sell Property</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Real Estate Advice</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-accent mb-6 uppercase tracking-wider text-xs">Company</h4>
+<ul class="space-y-4 text-sm text-slate-300">
+<li><a class="hover:text-accent transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Our Agents</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-accent transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-accent mb-6 uppercase tracking-wider text-xs">Newsletter</h4>
+<p class="text-sm text-slate-300 mb-4">Subscribe for early access to premium listings.</p>
+<div class="flex gap-2">
+<input class="bg-white/10 border-white/10 rounded-lg text-sm w-full focus:ring-accent focus:border-accent" placeholder="Email address" type="email"/>
+<button class="px-4 py-2 bg-accent text-primary font-bold rounded-lg text-sm whitespace-nowrap">Join Now</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 md:px-10 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
+<p>© 2024 Home Market International. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Cookie Settings</a>
+</div>
+</div>
+</footer>
+</body></html>
