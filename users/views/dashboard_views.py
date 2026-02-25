@@ -1,20 +1,19 @@
 from django.views.generic import TemplateView
-from django.contrib.auth.mixins import LoginRequiredMixin
 
-class BuyerDashboardView(LoginRequiredMixin, TemplateView):
+class BuyerDashboardView(TemplateView):
     template_name = 'home/buyer_dashboard.html'
 
-class BuyerProfileView(LoginRequiredMixin, TemplateView):
+class BuyerProfileView(TemplateView):
     template_name = 'home/buyer_profile.html'
 
-class BuyerSavedPropertyView(LoginRequiredMixin, TemplateView):
+class BuyerSavedPropertyView(TemplateView):
     template_name = 'home/buyer_saved_property.html'
 
-class BuyerBookingView(LoginRequiredMixin, TemplateView):
+class BuyerBookingView(TemplateView):
     template_name = 'home/buyer_booking.html'
 
-class SellerProfileView(LoginRequiredMixin, TemplateView):
+class SellerProfileView(TemplateView):
     template_name = 'home/seller_profile.html'
 
-class SellerKYCView(LoginRequiredMixin, TemplateView):
+class SellerKYCView(TemplateView):
     template_name = 'home/seller_kyc.html'

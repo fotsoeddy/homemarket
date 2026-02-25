@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html lang="en"><head>
 <meta charset="utf-8"/>
@@ -32,30 +33,27 @@
 <!-- Header Navigation -->
 <header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 px-4 md:px-10 py-3">
 <div class="max-w-7xl mx-auto flex items-center justify-between gap-8">
-<div class="flex items-center gap-8 shrink-0">
+<a href="{% url 'core:home' %}" class="flex items-center gap-8 shrink-0">
 <div class="flex items-center gap-2 text-primary dark:text-accent">
-<span class="material-symbols-outlined text-3xl font-bold">corporate_fare</span>
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-8 w-auto">
 <h2 class="text-primary dark:text-slate-100 text-xl font-bold tracking-tight">Home Market</h2>
 </div>
-<div class="hidden lg:flex items-center bg-primary/5 dark:bg-primary/20 rounded-xl px-4 py-2 w-80">
-<span class="material-symbols-outlined text-primary/60 dark:text-slate-400">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-primary/40" placeholder="Search luxury estates..." type="text"/>
-</div>
-</div>
+</a>
 <nav class="hidden md:flex items-center gap-6">
-<a class="text-sm font-semibold text-primary border-b-2 border-accent pb-1" href="#">Buy</a>
-<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Rent</a>
-<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Sell</a>
-<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Agents</a>
+<a class="text-sm font-semibold text-primary border-b-2 border-accent pb-1" href="{% url 'core:search' %}">Buy</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="{% url 'core:search' %}">Rent</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="{% url 'users:register' %}">Sell</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="{% url 'users:register' %}">Agents</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="{% url 'core:about' %}">About</a>
 </nav>
 <div class="flex items-center gap-3">
 <button class="p-2 rounded-xl bg-primary/5 hover:bg-primary/10 transition-colors text-primary">
 <span class="material-symbols-outlined">notifications</span>
 </button>
-<button class="hidden sm:flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-xl font-bold text-sm shadow-lg shadow-primary/20">
+<a href="{% url 'users:login' %}" class="hidden sm:flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-xl font-bold text-sm shadow-lg shadow-primary/20">
 <span class="material-symbols-outlined text-sm">person</span>
                     Sign In
-                </button>
+                </a>
 <div class="size-10 rounded-full bg-accent/20 border-2 border-accent overflow-hidden">
 <img alt="User Profile" class="w-full h-full object-cover" data-alt="Professional headshot of a luxury real estate client" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQJR54YQArqpxPTB9M3K64aX847qEMMrah8TCdibzNMd1araJo0wP4kwHJd0Hu3Pvucgqg2elNVvQ2Fy4H28piDJfKbt0tm7iFCvj4dfVv3NT0q4YewL3s2lAYGbYiNhoPoo_M1Isv2RroXc_Lls9VNtv-ZwetTavQpi_GFPrqcrhzceWY9gwJutq6Ymcldnlwy4HncmEYB_lPXFYw7XIFEEibpltcX9hzgnJHje3u_eHQe28agfiZqLP-PNAXRa-LY5wUn1pI99A"/>
 </div>
@@ -461,10 +459,10 @@
 <footer class="mt-20 bg-primary text-white py-16">
 <div class="max-w-7xl mx-auto px-4 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-12">
 <div class="col-span-1 md:col-span-1">
-<div class="flex items-center gap-2 text-accent mb-6">
-<span class="material-symbols-outlined text-3xl font-bold">corporate_fare</span>
+<a href="{% url 'core:home' %}" class="flex items-center gap-2 text-accent mb-6">
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-8 w-auto">
 <h2 class="text-xl font-bold tracking-tight text-white">Home Market</h2>
-</div>
+</a>
 <p class="text-slate-400 text-sm leading-relaxed">Defining luxury living through exclusive properties and unparalleled service since 1995. Your journey home begins with us.</p>
 </div>
 <div>

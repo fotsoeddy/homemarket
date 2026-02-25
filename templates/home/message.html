@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
@@ -44,12 +45,10 @@
 <!-- Top Navigation Bar -->
 <header class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-3 shrink-0">
 <div class="flex items-center gap-8">
-<div class="flex items-center gap-3">
-<div class="size-8 bg-primary text-white rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined">domain</span>
-</div>
+<a href="{% url 'core:home' %}" class="flex items-center gap-3">
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-8 w-auto">
 <h2 class="text-primary dark:text-white text-xl font-bold tracking-tight">Home Market</h2>
-</div>
+</a>
 <label class="hidden md:flex flex-col min-w-64">
 <div class="flex w-full items-stretch rounded-xl h-10 bg-neutral-light dark:bg-slate-800">
 <div class="text-slate-400 flex items-center justify-center pl-4">
@@ -74,7 +73,7 @@
 <p class="text-sm font-semibold">John Doe</p>
 <p class="text-xs text-slate-500">Premium Member</p>
 </div>
-<div class="aspect-square bg-cover rounded-full size-10 border-2 border-primary/10" data-alt="User profile picture of John Doe" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXgVHbT1_rH91X9enmiZnmCgafn9yxN94EBw9_bC-bpBrWUbJ5PKewzx--N97DGozuaSW6bWZoFFAoxROZXRlIfluENoebwByqmERUQlvrPWXxu9l_ehUlOvux2sGR2Q-mz5ATkf-UvJHNb8ju4DHYKNkfASRXIvH-rdTamz-2UfFqUpRx3-jVnRrcQdvxYWVxoqYushY53iPEMJk4Asw3NmCLK90kfMTrP_xtGvwNDf_RERrEs9Ml9O8hx7YzjW2RzqxtOlQvrpY');"></div>
+<a href="{% url 'users:buyer_profile' %}" class="aspect-square bg-cover rounded-full size-10 border-2 border-primary/10" data-alt="User profile picture of John Doe" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCXgVHbT1_rH91X9enmiZnmCgafn9yxN94EBw9_bC-bpBrWUbJ5PKewzx--N97DGozuaSW6bWZoFFAoxROZXRlIfluENoebwByqmERUQlvrPWXxu9l_ehUlOvux2sGR2Q-mz5ATkf-UvJHNb8ju4DHYKNkfASRXIvH-rdTamz-2UfFqUpRx3-jVnRrcQdvxYWVxoqYushY53iPEMJk4Asw3NmCLK90kfMTrP_xtGvwNDf_RERrEs9Ml9O8hx7YzjW2RzqxtOlQvrpY');"></a>
 </div>
 </div>
 </header>

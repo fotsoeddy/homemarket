@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html lang="en"><head>
 <meta charset="utf-8"/>
@@ -43,20 +44,20 @@
 <div class="layout-container flex h-full grow flex-col">
 <!-- Top Navigation Bar -->
 <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-4 sticky top-0 z-50">
-<div class="flex items-center gap-3 text-primary dark:text-white">
+<a href="{% url 'core:home' %}" class="flex items-center gap-3 text-primary dark:text-white">
 <div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white">
-<span class="material-symbols-outlined text-xl">home_work</span>
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-6 w-auto">
 </div>
 <h2 class="text-primary dark:text-white text-xl font-bold leading-tight tracking-tight">Home Market</h2>
-</div>
+</a>
 <div class="flex flex-1 justify-end gap-8 items-center">
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-slate-600 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors" href="#">Properties</a>
-<a class="text-slate-600 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors" href="#">My Bookings</a>
-<a class="text-slate-600 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors" href="#">Support</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors" href="{% url 'core:search' %}">Properties</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors" href="{% url 'users:buyer_dashboard' %}">My Bookings</a>
+<a class="text-slate-600 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors" href="{% url 'core:about' %}">Support</a>
 </nav>
-<div class="bg-primary/10 border border-primary/20 rounded-full size-10 flex items-center justify-center overflow-hidden" data-alt="User profile avatar circular image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDM1xiIN-71oOVsg8Zse3aPhLPPFhEYW0I1_MMtD9BxPDBOI-gChLhgqo09K-JYXN2uFis2yLqMjoi8W5uS4F8lJb8YXUvhpLrR5w-g4IKGEwwXMuB-3gpAZuQnJJDYZ1wN9C5CwV0A4INDoz2I4ljiguoEopT1jHV76nyFsLcITzoNTOFYJvIjvJJFmthmytz0PMgJe8FsbRW-_cWn-Hpxa8SdZs0YrUT_F_R3LfD0LAudBLMNYrAWR1yIVA4z-gr1FLHM1TzB6jE");'>
-</div>
+<a href="{% url 'users:buyer_profile' %}" class="bg-primary/10 border border-primary/20 rounded-full size-10 flex items-center justify-center overflow-hidden" data-alt="User profile avatar circular image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDM1xiIN-71oOVsg8Zse3aPhLPPFhEYW0I1_MMtD9BxPDBOI-gChLhgqo09K-JYXN2uFis2yLqMjoi8W5uS4F8lJb8YXUvhpLrR5w-g4IKGEwwXMuB-3gpAZuQnJJDYZ1wN9C5CwV0A4INDoz2I4ljiguoEopT1jHV76nyFsLcITzoNTOFYJvIjvJJFmthmytz0PMgJe8FsbRW-_cWn-Hpxa8SdZs0YrUT_F_R3LfD0LAudBLMNYrAWR1yIVA4z-gr1FLHM1TzB6jE");'>
+</a>
 </div>
 </header>
 <main class="flex-1 flex flex-col max-w-6xl mx-auto w-full px-6 py-8">
@@ -238,7 +239,7 @@
 <div class="mt-12 py-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
 <div class="flex items-center gap-2 text-slate-500 text-sm">
 <span class="material-symbols-outlined text-base">help_outline</span>
-                        Need help? <a class="text-primary font-bold hover:underline" href="#">Contact our 24/7 concierge service</a>
+                        Need help? <a class="text-primary font-bold hover:underline" href="{% url 'core:about' %}">Contact our 24/7 concierge service</a>
 </div>
 <div class="flex items-center gap-8">
 <img alt="PCI DSS Compliant" class="h-6 opacity-50 dark:invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbuysywI9VE-aTVhYSI3PD46p32yQaOo2366NYNcJZIqbRvv0X__-XR0d5npfWbnppXNl4cSF0TD9Dko02DaKGIfsXiIAHyKcJNELcz04mT_CZEWvAvtVTNQViAU87uRINCtozSbjyP7-wLgIth4tjUDpDDJ3RhfuPsZpejt6AzAL5LjdO_qWTdJmJzHFSQlibeD5G9DupGiON6hT09RYHENURP0Cdng0uUynvUTfkg-_od7IqJTIk-4t4zDxZuSQw7KEkEHDoW4o"/>

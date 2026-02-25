@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
@@ -31,30 +32,28 @@
 <div class="flex h-screen overflow-hidden">
 <!-- Sidebar -->
 <aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark flex flex-col">
-<div class="p-6 flex items-center gap-3">
-<div class="size-8 bg-primary rounded flex items-center justify-center text-white">
-<span class="material-symbols-outlined">home</span>
-</div>
+<a href="{% url 'core:home' %}" class="p-6 flex items-center gap-3">
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-8 w-auto">
 <h2 class="text-xl font-bold tracking-tight">Home Market</h2>
-</div>
+</a>
 <nav class="flex-1 px-4 space-y-2">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="{% url 'users:buyer_dashboard' %}">
 <span class="material-symbols-outlined">dashboard</span>
 <span class="font-medium">Dashboard</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="{% url 'core:search' %}">
 <span class="material-symbols-outlined">search</span>
 <span class="font-medium">Search</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white" href="{% url 'users:buyer_dashboard' %}">
 <span class="material-symbols-outlined">calendar_today</span>
 <span class="font-medium">My Bookings</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="{% url 'users:buyer_dashboard' %}">
 <span class="material-symbols-outlined">favorite</span>
 <span class="font-medium">Saved</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="{% url 'users:buyer_profile' %}">
 <span class="material-symbols-outlined">settings</span>
 <span class="font-medium">Settings</span>
 </a>

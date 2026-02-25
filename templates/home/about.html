@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html lang="en"><head>
 <meta charset="utf-8"/>
@@ -33,18 +34,16 @@
 <div class="layout-container flex h-full grow flex-col">
 <!-- Header -->
 <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-4 bg-white dark:bg-background-dark sticky top-0 z-50">
-<div class="flex items-center gap-4 text-primary dark:text-accent">
-<div class="size-6">
-<span class="material-symbols-outlined text-3xl">home_work</span>
-</div>
+<a href="{% url 'core:home' %}" class="flex items-center gap-4 text-primary dark:text-accent">
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-8 w-auto">
 <h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-[-0.015em]">Home Market</h2>
-</div>
+</a>
 <div class="flex flex-1 justify-end gap-8 items-center">
 <nav class="hidden md:flex items-center gap-9">
-<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary dark:hover:text-accent transition-colors" href="#">Home</a>
-<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary dark:hover:text-accent transition-colors" href="#">Market</a>
-<a class="text-primary dark:text-accent text-sm font-bold border-b-2 border-primary dark:border-accent" href="#">About</a>
-<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary dark:hover:text-accent transition-colors" href="#">Contact</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary dark:hover:text-accent transition-colors" href="{% url 'core:home' %}">Home</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary dark:hover:text-accent transition-colors" href="{% url 'core:search' %}">Market</a>
+<a class="text-primary dark:text-accent text-sm font-bold border-b-2 border-primary dark:border-accent" href="{% url 'core:about' %}">About</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary dark:hover:text-accent transition-colors" href="{% url 'core:about' %}">Contact</a>
 </nav>
 <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/10" data-alt="User profile avatar portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxf-zNic37SaHeQUl-0rjJOgN-GUhP6zfDpZqQstTjoXvkqEpZKejmpzg0dafPrH1PQfbl-gAl_zm6peFL2ApnREBREAnns1Q_pKH1Rrd-X80EAUBIgYrv_XmTBWILzrfigrhhfgVL4oTcfr7C35PhcpTxUf5-4fOAthaTBAV90MhS1oB0h6qceXH89NFVTlVA18FOE1Hn1kJUUkaMgCzpJYKw2VkF7aUTDhqTiT8XlioYulZHRA7URqQh0rOyJMMo-EKYmgOm710");'></div>
 </div>
@@ -179,8 +178,8 @@
 <p class="text-slate-600 dark:text-slate-400 text-lg">Browse our latest collections and find the perfect pieces for your space.</p>
 </div>
 <div class="flex gap-4 relative z-10">
-<button class="bg-accent text-primary px-8 py-4 rounded-lg font-black hover:bg-accent/90 transition-all shadow-lg shadow-accent/20">Shop the Market</button>
-<button class="border-2 border-primary dark:border-accent text-primary dark:text-accent px-8 py-4 rounded-lg font-bold hover:bg-primary hover:text-white dark:hover:bg-accent dark:hover:text-primary transition-all">Contact Us</button>
+<a href="{% url 'core:search' %}" class="bg-accent text-primary px-8 py-4 rounded-lg font-black hover:bg-accent/90 transition-all shadow-lg shadow-accent/20">Shop the Market</a>
+<a href="{% url 'core:about' %}" class="border-2 border-primary dark:border-accent text-primary dark:text-accent px-8 py-4 rounded-lg font-bold hover:bg-primary hover:text-white dark:hover:bg-accent dark:hover:text-primary transition-all">Contact Us</a>
 </div>
 </div>
 </section>

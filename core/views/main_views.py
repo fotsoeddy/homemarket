@@ -17,3 +17,12 @@ class MessageView(TemplateView):
 
 class PaymentMethodView(TemplateView):
     template_name = 'home/payement_method.html'
+
+class AboutView(TemplateView):
+    template_name = 'home/about.html'
+
+class ExplorePropertyView(TemplateView):
+    template_name = 'home/explore_property.html'
+
+class InvestmentOpportunityView(TemplateView):
+    template_name = 'home/investesment_opportunity.html'

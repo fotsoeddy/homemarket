@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
@@ -41,18 +42,16 @@
 <div class="layout-container flex h-full grow flex-col">
 <!-- Top Navigation Bar -->
 <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 md:px-10 py-3 sticky top-0 z-50">
-<div class="flex items-center gap-8">
+<a href="{% url 'core:home' %}" class="flex items-center gap-8">
 <div class="flex items-center gap-4 text-primary dark:text-accent">
-<div class="size-8 flex items-center justify-center rounded-lg bg-primary text-white">
-<span class="material-symbols-outlined">account_balance</span>
-</div>
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-8 w-auto">
 <h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">Home Market</h2>
 </div>
+</a>
 <div class="hidden md:flex items-center gap-9">
-<a class="text-primary font-bold text-sm leading-normal border-b-2 border-primary" href="#">Opportunities</a>
-<a class="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Portfolio</a>
-<a class="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Insights</a>
-</div>
+<a class="text-primary font-bold text-sm leading-normal border-b-2 border-primary" href="{% url 'core:investment' %}">Opportunities</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="{% url 'core:search' %}">Portfolio</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium leading-normal hover:text-primary transition-colors" href="{% url 'core:about' %}">Insights</a>
 </div>
 <div class="flex flex-1 justify-end gap-4 md:gap-8 items-center">
 <label class="hidden lg:flex flex-col min-w-40 h-10 max-w-64">
@@ -372,10 +371,10 @@
 <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 px-6 md:px-10">
 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
 <div class="col-span-2 space-y-4">
-<div class="flex items-center gap-3 text-primary dark:text-accent">
-<span class="material-symbols-outlined text-3xl">account_balance</span>
+<a href="{% url 'core:home' %}" class="flex items-center gap-3 text-primary dark:text-accent">
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-8 w-auto">
 <h2 class="text-slate-900 dark:text-white text-xl font-bold">Home Market</h2>
-</div>
+</a>
 <p class="text-slate-500 text-sm max-w-xs leading-relaxed">The premier destination for secure real estate investments. Empowering investors with transparency and high-performance assets.</p>
 <div class="flex gap-4">
 <div class="size-8 rounded bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all">
@@ -407,7 +406,7 @@
 <ul class="space-y-2 text-sm text-slate-500">
 <li><a class="hover:text-primary" href="#">Help Center</a></li>
 <li><a class="hover:text-primary" href="#">Risk Disclosure</a></li>
-<li><a class="hover:text-primary" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary" href="{% url 'core:about' %}">Contact Us</a></li>
 </ul>
 </div>
 </div>

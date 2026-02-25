@@ -5,7 +5,10 @@ from .views import (
     PropertyDetailView,
     CheckoutView,
     MessageView,
-    PaymentMethodView
+    PaymentMethodView,
+    AboutView,
+    ExplorePropertyView,
+    InvestmentOpportunityView
 )
 
 urlpatterns = [
@@ -15,4 +18,7 @@ urlpatterns = [
     path('checkout/', CheckoutView.as_view(), name='checkout'),
     path('messages/', MessageView.as_view(), name='messages'),
     path('payment-method/', PaymentMethodView.as_view(), name='payment_method'),
+    path('about/', AboutView.as_view(), name='about'),
+    path('explore/', ExplorePropertyView.as_view(), name='explore'),
+    path('investment/', InvestmentOpportunityView.as_view(), name='investment'),
 ]

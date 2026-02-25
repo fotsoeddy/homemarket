@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html lang="en"><head>
 <meta charset="utf-8"/>
@@ -44,18 +45,18 @@
 <div class="flex h-screen overflow-hidden">
 <aside class="w-72 bg-primary flex flex-col shrink-0">
 <div class="p-8">
-<div class="flex items-center gap-3">
+<a href="{% url 'core:home' %}" class="flex items-center gap-3">
 <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary">
-<span class="material-symbols-outlined font-bold">home_work</span>
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-8 w-auto">
 </div>
 <div class="flex flex-col">
 <h1 class="text-white text-lg font-bold leading-tight">Home Market</h1>
 <p class="text-white/60 text-xs font-medium uppercase tracking-wider">Seller Portal</p>
 </div>
-</div>
+</a>
 </div>
 <nav class="flex-1 px-4 space-y-2 overflow-y-auto">
-<a class="flex items-center gap-4 px-4 py-3 bg-white/10 text-white rounded-xl transition-colors" href="#">
+<a class="flex items-center gap-4 px-4 py-3 bg-white/10 text-white rounded-xl transition-colors" href="{% url 'users:seller_dashboard' %}">
 <span class="material-symbols-outlined">dashboard</span>
 <span class="font-medium">Dashboard</span>
 </a>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
@@ -46,18 +47,19 @@
 <header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex items-center justify-between h-20">
-<div class="flex items-center gap-8">
+<a href="{% url 'core:home' %}" class="flex items-center gap-8">
 <div class="flex items-center gap-2 text-primary">
-<span class="material-symbols-outlined text-3xl font-bold">home_work</span>
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-8 w-auto">
 <h1 class="text-xl font-black tracking-tight">Home Market</h1>
 </div>
+</a>
 <nav class="hidden md:flex items-center gap-6">
-<a class="text-sm font-semibold text-primary" href="#">Buy</a>
-<a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="#">Rent</a>
-<a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="#">Sell</a>
-<a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="#">Agents</a>
+<a class="text-sm font-semibold text-primary" href="{% url 'core:search' %}">Buy</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="{% url 'core:search' %}">Rent</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="{% url 'users:register' %}">Sell</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="{% url 'users:register' %}">Agents</a>
+<a class="text-sm font-medium text-slate-600 hover:text-primary transition-colors" href="{% url 'core:about' %}">About</a>
 </nav>
-</div>
 <div class="flex items-center gap-4">
 <div class="hidden lg:flex relative">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
@@ -66,9 +68,9 @@
 <button class="p-2 text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">
 <span class="material-symbols-outlined">notifications</span>
 </button>
-<div class="h-10 w-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden">
-<img alt="User Profile" data-alt="Professional headshot of a smiling man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD36wQRwAvkTdD3tldH489LXHPpSLS96H2yRZAsfpu1YCKvEjhJe2Mm-pUHxnyrXOS9lylzSMvAZJJOQaD9aBxXm5PUPt-3UtkbU-ifpGY-bFKT-rtQodz2eaxJZ3rDNEBm3F8Oj2tFexkLwPoZ5k0r3m3nx_kcjS5L9f2_tWRLyrqT5xOrvJgxYT14utfs8I1XV6HqulIUb4Bhr9J0mkKT0pEcvd37wS9B42dztsLWB1ydNy1iFsJnjblhsQlNy5RCh6aTt8yv0uQ"/>
-</div>
+<a href="{% url 'users:login' %}" class="h-10 w-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden">
+<img alt="User Profile" data-alt="Professional headshot of a smiling man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD336wQRwAvkTdD3tldH489LXHPpSLS96H2yRZAsfpu1YCKvEjhJe2Mm-pUHxnyrXOS9lylzSMvAZJJOQaD9aBxXm5PUPt-3UtkbU-ifpGY-bFKT-rtQodz2eaxJZ3rDNEBm3F8Oj2tFexkLwPoZ5k0r3m3nx_kcjS5L9f2_tWRLyrqT5xOrvJgxYT14utfs8I1XV6HqulIUb4Bhr9J0mkKT0pEcvd37wS9B42dztsLWB1ydNy1iFsJnjblhsQlNy5RCh6aTt8yv0uQ"/>
+</a>
 </div>
 </div>
 </div>
@@ -399,10 +401,10 @@
 <footer class="mt-20 border-t border-slate-200 py-12 bg-white">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
 <div class="col-span-1 md:col-span-2">
-<div class="flex items-center gap-2 text-primary mb-6">
-<span class="material-symbols-outlined text-3xl font-bold">home_work</span>
+<a href="{% url 'core:home' %}" class="flex items-center gap-2 text-primary mb-6">
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-8 w-auto">
 <h1 class="text-xl font-black tracking-tight">Home Market</h1>
-</div>
+</a>
 <p class="text-slate-500 max-w-sm mb-6">Connecting homeowners and buyers with premium properties across the most desirable neighborhoods since 2010.</p>
 <div class="flex gap-4">
 <a class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-xl">public</span></a>

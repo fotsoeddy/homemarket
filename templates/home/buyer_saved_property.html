@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
@@ -32,17 +33,15 @@
 <!-- Top Navigation Bar -->
 <header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-6 md:px-10 py-3 sticky top-0 z-50">
 <div class="flex items-center gap-8">
-<div class="flex items-center gap-3 text-primary">
-<div class="size-8 flex items-center justify-center bg-primary/10 rounded-lg">
-<span class="material-symbols-outlined">home_work</span>
-</div>
+<a href="{% url 'core:home' %}" class="flex items-center gap-3 text-primary">
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-8 w-auto">
 <h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight">Home Market</h2>
-</div>
+</a>
 <nav class="hidden md:flex items-center gap-6">
-<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Dashboard</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Market</a>
-<a class="text-primary text-sm font-semibold border-b-2 border-primary py-1" href="#">Saved</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="#">Messages</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="{% url 'users:buyer_dashboard' %}">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="{% url 'core:search' %}">Market</a>
+<a class="text-primary text-sm font-semibold border-b-2 border-primary py-1" href="{% url 'users:buyer_dashboard' %}">Saved</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm font-medium transition-colors" href="{% url 'core:message' %}">Messages</a>
 </nav>
 </div>
 <div class="flex flex-1 justify-end gap-4 items-center">
@@ -362,10 +361,10 @@
 <!-- Footer -->
 <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark py-10">
 <div class="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between items-center gap-6">
-<div class="flex items-center gap-3 text-primary opacity-50">
-<span class="material-symbols-outlined">home_work</span>
+<a href="{% url 'core:home' %}" class="flex items-center gap-3 text-primary opacity-70">
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-6 w-auto">
 <h2 class="text-slate-900 dark:text-white text-md font-bold leading-tight">Home Market</h2>
-</div>
+</a>
 <div class="flex items-center gap-8">
 <a class="text-xs font-medium text-slate-500 hover:text-primary transition-colors" href="#">Privacy Policy</a>
 <a class="text-xs font-medium text-slate-500 hover:text-primary transition-colors" href="#">Terms of Service</a>

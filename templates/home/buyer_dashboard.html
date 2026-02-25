@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
@@ -43,14 +44,14 @@
 <div class="flex min-h-screen">
 <!-- Sidebar -->
 <aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark hidden lg:flex flex-col sticky top-0 h-screen">
-<div class="p-6 flex items-center gap-3">
+<a href="{% url 'core:home' %}" class="p-6 flex items-center gap-3">
 <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
-<span class="material-symbols-outlined">home_work</span>
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-6 w-auto">
 </div>
 <span class="text-xl font-bold tracking-tight">HomeMarket</span>
-</div>
+</a>
 <nav class="flex-1 px-4 space-y-2 mt-4">
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-white font-medium" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary text-white font-medium" href="{% url 'users:buyer_dashboard' %}">
 <span class="material-symbols-outlined">dashboard</span>
 <span>Dashboard</span>
 </a>
@@ -58,11 +59,11 @@
 <span class="material-symbols-outlined">favorite</span>
 <span>Saved Properties</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="{% url 'users:buyer_dashboard' %}">
 <span class="material-symbols-outlined">calendar_month</span>
 <span>My Bookings</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="{% url 'core:message' %}">
 <span class="material-symbols-outlined">chat_bubble</span>
 <div class="flex-1 flex justify-between items-center">
 <span>Messages</span>
@@ -75,11 +76,11 @@
 </a>
 </nav>
 <div class="p-4 border-t border-slate-200 dark:border-slate-800">
-<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors mb-2" href="#">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors mb-2" href="{% url 'users:buyer_profile' %}">
 <span class="material-symbols-outlined">settings</span>
 <span>Settings</span>
 </a>
-<div class="flex items-center gap-3 px-4 py-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
+<a href="{% url 'users:buyer_profile' %}" class="flex items-center gap-3 px-4 py-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
 <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
 <img alt="Profile Avatar" data-alt="Close up of a professional man's face" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEnOAf_9FnDBRkEQkFvJkW0bLBhutixEFl1OlIVIkdKEpN8spx0KleIMX1oAVq-96mUPPCMya5giuq0qNG49hR5L49j93h3mJSeImTCvCezCTEJAXX30R4CGAYgoCqCyFUwQQa0pEWuflMQBGxPWkGZMsqZU17cmAgS34FCIjBqJWVZ3wUM-IUYcq4LO7ZKMQlFEYvDUMco2HFIj1fGYmAiif7zW9GE0t-8plB8mqiXjYw4UHUtuACqdyP8o4rCLjDpV4j5dMQqcc"/>
 </div>
@@ -87,7 +88,7 @@
 <span class="text-sm font-semibold truncate">John Doe</span>
 <span class="text-xs text-slate-500">Premium Buyer</span>
 </div>
-</div>
+</a>
 </div>
 </aside>
 <!-- Main Content -->
@@ -105,10 +106,10 @@
 <span class="material-symbols-outlined">notifications</span>
 <span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
 </button>
-<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2">
+<a href="{% url 'core:search' %}" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2">
 <span class="material-symbols-outlined text-sm">explore</span>
 <span>Find Properties</span>
-</button>
+</a>
 </div>
 </header>
 <div class="p-8 max-w-7xl mx-auto space-y-8">
