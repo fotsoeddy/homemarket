@@ -215,6 +215,6 @@ class LogoutView(View):
         return redirect('users:login')
 
 class SellerDashboardView(TemplateView):
-    template_name = "seller/dashboard.html"
+    template_name = "home/seller/dashboard.html"
 
 
