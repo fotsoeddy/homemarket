@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html lang="en"><head>
 <meta charset="utf-8"/>
@@ -38,17 +39,15 @@
 <header class="sticky top-0 z-50 w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-16">
-<div class="flex items-center gap-3">
-<div class="bg-primary text-white p-2 rounded-lg">
-<span class="material-symbols-outlined text-2xl">storefront</span>
-</div>
+<a href="{% url 'core:home' %}" class="flex items-center gap-3">
+<img src="{% static 'images/logo/logo.webp' %}" alt="Home Market Logo" class="h-8 w-auto">
 <h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Home Market</h1>
-</div>
+</a>
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#">Dashboard</a>
+<a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="{% url 'users:seller_dashboard' %}">Dashboard</a>
 <a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#">Listings</a>
 <a class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#">Orders</a>
-<a class="text-sm font-medium text-primary flex items-center gap-1" href="#">
+<a class="text-sm font-medium text-primary flex items-center gap-1" href="{% url 'users:seller_kyc' %}">
                             Verification <span class="size-1.5 rounded-full bg-primary"></span>
 </a>
 </nav>

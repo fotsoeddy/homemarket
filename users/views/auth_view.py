@@ -217,11 +217,4 @@ class LogoutView(View):
 class SellerDashboardView(TemplateView):
     template_name = "seller/dashboard.html"
 
-    def dispatch(self, request, *args, **kwargs):
-        # Vérifier que c'est un vendeur
-        if request.user.user_type != UserType.SELLER:
-            messages.error(request, "Access denied. Sellers only.")
-            return redirect('home')
-
-        return super().dispatch(request, *args, **kwargs)
 
