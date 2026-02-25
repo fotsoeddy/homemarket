@@ -23,18 +23,27 @@ class Profile(HomeMarketBase):
     
     def __str__(self):
         return f"Profile of {self.user}"
+class SellerVerification(models.Model):
 
-class SellerVerification(HomeMarketBase):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='seller_verification')
-    id_card_front = models.ImageField(upload_to='verification_docs/ids/', blank=True, null=True)
-    id_card_back = models.ImageField(upload_to='verification_docs/ids/', blank=True, null=True)
-    business_license = models.FileField(upload_to='verification_docs/licenses/', blank=True, null=True)
+    STATUS_CHOICES = (
+        ("PENDING", "Pending"),
+        ("APPROVED", "Approved"),
+        ("REJECTED", "Rejected"),
+    )
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    id_card_front = models.ImageField(upload_to="verification/")
+    id_card_back = models.ImageField(upload_to="verification/")
+    business_license = models.ImageField(upload_to="verification/", blank=True, null=True)
     is_verified = models.BooleanField(default=False)
-    verification_date = models.DateTimeField(null=True, blank=True)
-    rejection_reason = models.TextField(blank=True)
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default="PENDING"
+    )
 
-    def __str__(self):
-        return f"Verification for {self.user} - {'Verified' if self.is_verified else 'Pending'}"
+    created_at = models.DateTimeField(auto_now_add=True)
+
 
 class Buyer(User):
     class Meta:
