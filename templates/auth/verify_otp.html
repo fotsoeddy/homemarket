@@ -18,7 +18,7 @@
             <h2 class="text-3xl font-extrabold text-gray-800 mb-2 font-lato">Verify It's You</h2>
             <p class="text-gray-500 mb-8 text-base px-6">Enter the 6-digit code sent to your email address to activate your account.</p>
 
-            <form method="POST" action="{% url 'verify_otp' %}">
+            <form method="POST" action="{% url 'users:verify_otp' %}">
                 {% csrf_token %}
                 
                 <div class="mb-8 relative group">
