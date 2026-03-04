@@ -1,102 +1,258 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#000080",
-                        "background-light": "#f5f5f8",
-                        "background-dark": "#0a0a1a",
-                    },
-                    fontFamily: {
-                        "display": ["Inter", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#000080",
+              "background-light": "#f5f5f8",
+              "background-dark": "#0a0a1a",
             },
-        }
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
     </script>
-<style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
   </head>
-<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display">
-<div class="flex items-center bg-white dark:bg-slate-900 p-4 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
-<div class="text-primary dark:text-slate-100 flex size-10 shrink-0 items-center justify-center cursor-pointer hover:bg-primary/10 rounded-full transition-colors">
-<span class="material-symbols-outlined">arrow_back</span>
-</div>
-<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Verify Email</h2>
-</div>
-<main class="flex-1 flex flex-col items-center justify-center p-6 @container">
-<div class="w-full max-w-md bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-8">
-<div class="flex justify-center mb-8">
-<div class="flex flex-col items-center gap-2">
-<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1">mail</span>
-</div>
-<span class="text-primary font-bold text-xl tracking-tight">Home Market</span>
-</div>
-</div>
-<div class="text-center mb-8">
-<h1 class="text-slate-900 dark:text-white text-2xl font-bold mb-3">Verify It's You</h1>
-<p class="text-slate-500 dark:text-slate-400 text-base">
-                    We've sent a 6-digit verification code to your email address. Please enter it below to secure your account.
-                </p>
-</div>
-<form class="space-y-8">
-<div class="flex justify-between gap-2 @[320px]:gap-3">
-<input class="w-full aspect-square text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-primary focus:ring-0 dark:text-white transition-all" maxlength="1" placeholder="•" type="text"/>
-<input class="w-full aspect-square text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-primary focus:ring-0 dark:text-white transition-all" maxlength="1" placeholder="•" type="text"/>
-<input class="w-full aspect-square text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-primary focus:ring-0 dark:text-white transition-all" maxlength="1" placeholder="•" type="text"/>
-<input class="w-full aspect-square text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-primary focus:ring-0 dark:text-white transition-all" maxlength="1" placeholder="•" type="text"/>
-<input class="w-full aspect-square text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-primary focus:ring-0 dark:text-white transition-all" maxlength="1" placeholder="•" type="text"/>
-<input class="w-full aspect-square text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-primary focus:ring-0 dark:text-white transition-all" maxlength="1" placeholder="•" type="text"/>
-</div>
-<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2" type="submit">
-                    Verify Account
-                </button>
-</form>
-<div class="mt-8 text-center space-y-4">
-<p class="text-slate-500 dark:text-slate-400">
-                    Didn't receive the code? 
-                    <a class="text-primary font-semibold hover:underline decoration-2 underline-offset-4" href="#">Resend Code</a>
-</p>
-<div class="pt-4 border-t border-slate-100 dark:border-slate-800">
-<a class="text-slate-400 dark:text-slate-500 text-sm hover:text-primary transition-colors" href="#">
-                        Change email address
-                    </a>
-</div>
-</div>
-</div>
-<div class="mt-8 text-slate-400 dark:text-slate-600 text-xs text-center max-w-xs">
-            By verifying your account, you agree to Home Market's 
-            <a class="underline" href="#">Terms of Service</a> and <a class="underline" href="#">Privacy Policy</a>.
+  <body
+    class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display"
+  >
+    <div
+      class="flex items-center bg-white dark:bg-slate-900 p-4 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50"
+    >
+      <div
+        class="text-primary dark:text-slate-100 flex size-10 shrink-0 items-center justify-center cursor-pointer hover:bg-primary/10 rounded-full transition-colors"
+      >
+        <span class="material-symbols-outlined">arrow_back</span>
+      </div>
+      <h2
+        class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10"
+      >
+        Verify Email
+      </h2>
+    </div>
+    <main
+      class="flex-1 flex flex-col items-center justify-center p-6 @container"
+    >
+      <div
+        class="w-full max-w-md bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 p-8"
+      >
+        <div class="flex justify-center mb-8">
+          <div class="flex flex-col items-center gap-2">
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary"
+            >
+              <span
+                class="material-symbols-outlined text-4xl"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >mail</span
+              >
+            </div>
+            <span class="text-primary font-bold text-xl tracking-tight"
+              >Home Market</span
+            >
+          </div>
         </div>
-</main>
-<div class="p-4 flex justify-center @container">
-<div class="w-full max-w-md h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
-<div class="h-full bg-primary w-2/3"></div>
-</div>
-</div>
-</body></html>
+        <div class="text-center mb-8">
+          <h1 class="text-slate-900 dark:text-white text-2xl font-bold mb-3">
+            Verify It's You
+          </h1>
+          <p class="text-slate-500 dark:text-slate-400 text-base">
+            We've sent a 6-digit verification code to your email address. Please
+            enter it below to secure your account.
+          </p>
+        </div>
+        <form class="space-y-8" method="POST" id="otp-form">
+          {% csrf_token %} {% if messages %}
+          <div class="space-y-2">
+            {% for message in messages %}
+            <div
+              class="p-3 rounded-lg text-sm {% if message.tags == 'error' %}bg-red-100 text-red-700{% else %}bg-green-100 text-green-700{% endif %}"
+            >
+              {{ message }}
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+          <div class="flex justify-between gap-2 @[320px]:gap-3">
+            <input
+              class="otp-input w-full aspect-square text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-primary focus:ring-0 dark:text-white transition-all"
+              maxlength="1"
+              placeholder="•"
+              type="text"
+              pattern="\d*"
+              inputmode="numeric"
+            />
+            <input
+              class="otp-input w-full aspect-square text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-primary focus:ring-0 dark:text-white transition-all"
+              maxlength="1"
+              placeholder="•"
+              type="text"
+              pattern="\d*"
+              inputmode="numeric"
+            />
+            <input
+              class="otp-input w-full aspect-square text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-primary focus:ring-0 dark:text-white transition-all"
+              maxlength="1"
+              placeholder="•"
+              type="text"
+              pattern="\d*"
+              inputmode="numeric"
+            />
+            <input
+              class="otp-input w-full aspect-square text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-primary focus:ring-0 dark:text-white transition-all"
+              maxlength="1"
+              placeholder="•"
+              type="text"
+              pattern="\d*"
+              inputmode="numeric"
+            />
+            <input
+              class="otp-input w-full aspect-square text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-primary focus:ring-0 dark:text-white transition-all"
+              maxlength="1"
+              placeholder="•"
+              type="text"
+              pattern="\d*"
+              inputmode="numeric"
+            />
+            <input
+              class="otp-input w-full aspect-square text-center text-2xl font-bold bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:border-primary focus:ring-0 dark:text-white transition-all"
+              maxlength="1"
+              placeholder="•"
+              type="text"
+              pattern="\d*"
+              inputmode="numeric"
+            />
+          </div>
+          <input type="hidden" name="code" id="verification-code" />
+          <button
+            class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2"
+            type="submit"
+          >
+            Verify Account
+          </button>
+        </form>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const inputs = document.querySelectorAll(".otp-input");
+            const form = document.getElementById("otp-form");
+            const hiddenCode = document.getElementById("verification-code");
+
+            inputs.forEach((input, index) => {
+              // Handle input
+              input.addEventListener("input", (e) => {
+                if (e.target.value.length === 1) {
+                  if (index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                  }
+                }
+              });
+
+              // Handle backspace
+              input.addEventListener("keydown", (e) => {
+                if (e.key === "Backspace" && !e.target.value && index > 0) {
+                  inputs[index - 1].focus();
+                }
+              });
+
+              // Handle paste
+              input.addEventListener("paste", (e) => {
+                e.preventDefault();
+                const pasteData = e.clipboardData
+                  .getData("text")
+                  .slice(0, 6)
+                  .split("");
+                pasteData.forEach((char, i) => {
+                  if (inputs[index + i]) {
+                    inputs[index + i].value = char;
+                  }
+                });
+                if (inputs[index + pasteData.length]) {
+                  inputs[index + pasteData.length].focus();
+                } else {
+                  inputs[5].focus();
+                }
+              });
+            });
+
+            form.addEventListener("submit", (e) => {
+              let code = "";
+              inputs.forEach((input) => (code += input.value));
+              hiddenCode.value = code;
+            });
+          });
+        </script>
+        <div class="mt-8 text-center space-y-4">
+          <p class="text-slate-500 dark:text-slate-400">
+            Didn't receive the code?
+            <a
+              class="text-primary font-semibold hover:underline decoration-2 underline-offset-4"
+              href="#"
+              >Resend Code</a
+            >
+          </p>
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
+            <a
+              class="text-slate-400 dark:text-slate-500 text-sm hover:text-primary transition-colors"
+              href="#"
+            >
+              Change email address
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-8 text-slate-400 dark:text-slate-600 text-xs text-center max-w-xs"
+      >
+        By verifying your account, you agree to Home Market's
+        <a class="underline" href="#">Terms of Service</a> and
+        <a class="underline" href="#">Privacy Policy</a>.
+      </div>
+    </main>
+    <div class="p-4 flex justify-center @container">
+      <div
+        class="w-full max-w-md h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden"
+      >
+        <div class="h-full bg-primary w-2/3"></div>
+      </div>
+    </div>
+  </body>
+</html>

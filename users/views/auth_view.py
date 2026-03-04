@@ -144,26 +144,10 @@ class VerificationView(View):
                 user.is_active = True
                 user.save()
 
-                # Connexion automatique
-                login(request, user)
-
-                # Nettoyage session OTP (important pour sécurité)
-                request.session.pop('verification_email', None)
-                request.session.pop('verification_code', None)
-
                 # Messages de succès
-                messages.success(request, "Votre compte a été vérifié avec succès ! Bienvenue.")
+                messages.success(request, "Votre compte a été vérifié avec succès ! Veuillez vous connecter.")
 
-                # 🎯 REDIRECTION INTELLIGENTE SELON LE TYPE D'UTILISATEUR
-                if user.user_type == UserType.SELLER:
-                    # Vérifie si le vendeur a déjà un dossier et s'il est approuvé
-                    verification = SellerVerification.objects.filter(user=user).first()
-                    if verification and verification.is_verified:
-                        return redirect('users:seller_dashboard')  # ← dashboard vendeur
-                    else:
-                        return redirect('users:seller_verification')  # ← page soumission dossier
-                else:
-                    return redirect('home')  # ← page d'accueil pour buyer
+                return redirect('users:login')
 
             except User.DoesNotExist:
                 messages.error(request, "Utilisateur introuvable. Veuillez réessayer l'inscription.")
