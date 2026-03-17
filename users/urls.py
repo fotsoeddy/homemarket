@@ -6,7 +6,9 @@ from .views.dashboard_views import (
     BuyerSavedPropertyView,
     BuyerBookingView,
     SellerProfileView,
-    SellerKYCView
+    SellerKYCView,
+    SellerListingView,
+    SellerWalletView
 )
 from .views.property_views import (
     AddPropertyStep1View,
@@ -25,6 +27,8 @@ urlpatterns = [
     path('seller-verification/', SellerVerificationView.as_view(), name='seller_verification'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('seller/dashboard/', SellerDashboardView.as_view(), name='seller_dashboard'),
+    path('seller/listings/', SellerListingView.as_view(), name='seller_listings'),
+    path('seller/wallet/', SellerWalletView.as_view(), name='seller_wallet'),
     path('seller/profile/', SellerProfileView.as_view(), name='seller_profile'),
     path('seller/kyc/', SellerKYCView.as_view(), name='seller_kyc'),
     # Add Property - multi-step wizard

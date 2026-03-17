@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html lang="en"><head>
 <meta charset="utf-8"/>
@@ -39,10 +40,10 @@
 <h2 class="text-primary dark:text-white text-xl font-black leading-tight tracking-tight">Home Market</h2>
 </div>
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-slate-600 dark:text-slate-400 text-sm font-semibold hover:text-primary transition-colors" href="#">Dashboard</a>
-<a class="text-primary dark:text-accent-gold text-sm font-bold border-b-2 border-primary dark:border-accent-gold" href="#">My Listings</a>
-<a class="text-slate-600 dark:text-slate-400 text-sm font-semibold hover:text-primary transition-colors" href="#">Inbox</a>
-<a class="text-slate-600 dark:text-slate-400 text-sm font-semibold hover:text-primary transition-colors" href="#">Analytics</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-semibold hover:text-primary transition-colors" href="{% url 'users:seller_dashboard' %}">Dashboard</a>
+<a class="text-primary dark:text-accent-gold text-sm font-bold border-b-2 border-primary dark:border-accent-gold" href="{% url 'users:seller_listings' %}">My Listings</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-semibold hover:text-primary transition-colors" href="{% url 'core:message' %}">Inbox</a>
+<a class="text-slate-600 dark:text-slate-400 text-sm font-semibold hover:text-primary transition-colors" href="{% url 'users:seller_wallet' %}">Wallet</a>
 </nav>
 <div class="flex items-center gap-4">
 <button class="flex items-center justify-center rounded-full size-10 bg-primary/5 hover:bg-primary/10 text-primary transition-all">
@@ -92,6 +93,8 @@
 </button>
 </div>
 </div>
+<!-- Grid of Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 <!-- Grid of Cards -->
 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 <!-- Card 1 -->
@@ -262,6 +265,7 @@
 <button class="px-3 border border-slate-200 dark:border-slate-800 rounded-lg text-slate-400 hover:text-primary transition-colors">
 <span class="material-symbols-outlined">more_vert</span>
 </button>
+</div>
 </div>
 </div>
 </div>

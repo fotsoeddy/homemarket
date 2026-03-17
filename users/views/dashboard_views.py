@@ -62,3 +62,26 @@ class SellerProfileView(TemplateView):
 
 class SellerKYCView(TemplateView):
     template_name = 'home/seller_kyc.html'
+
+class SellerListingView(LoginRequiredMixin, TemplateView):
+    template_name = 'home/seller/seller_listing.html'
+    login_url = '/users/login/'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        context['listings'] = Listing.objects.filter(property__owner=user).select_related('property', 'property__location').prefetch_related('property__images')
+        return context
+
+class SellerWalletView(LoginRequiredMixin, TemplateView):
+    template_name = 'home/seller/seller_wallet.html'
+    login_url = '/users/login/'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        # Transactions for properties owned by the user
+        transactions = Transaction.objects.filter(listing__property__owner=user).order_by('-created')
+        context['transactions'] = transactions
+        context['total_revenue'] = transactions.filter(status=TransactionStatus.COMPLETED).aggregate(total=Sum('amount'))['total'] or 0
+        return context
