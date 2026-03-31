@@ -52,21 +52,12 @@ class CreatePayunitPaymentView(LoginRequiredMixin, View):
             reference=f"PAY-{transaction.id}",
         )
 
-                    # 🔹 Headers PayUnit corrigés
-        import base64
-
-        PAYUNIT_USERNAME = "1e39f9b4-74d1-4ac9-9224-ce778a8ff544"  # ← à remplir
-        PAYUNIT_PASSWORD = "c5b8607b-7783-4ee8-86e7-4ea5f75617f7"  # ← à remplir
-
-        token = base64.b64encode(
-            f"{PAYUNIT_USERNAME}:{PAYUNIT_PASSWORD}".encode()
-        ).decode()
-
+        # 🔹 PayUnit Config from settings
         headers = {
-            "Authorization": f"Basic {token}",
+            "Authorization": f"Basic {base64.b64encode(f'{settings.PAYUNIT_USERNAME}:{settings.PAYUNIT_PASSWORD}'.encode()).decode()}",
             "x-api-key": settings.PAYUNIT_API_KEY,
             "Content-Type": "application/json",
-            "mode": "test",
+            "mode": settings.PAYUNIT_MODE,
         }
 
             # 🔹 Data PayUnit (CORRIGÉ)
