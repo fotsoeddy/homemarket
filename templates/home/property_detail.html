@@ -39,6 +39,20 @@ h1, h2, .serif { font-family: 'DM Serif Display', serif; }
 </head>
 <body class="bg-bg-light dark:bg-bg-dark text-slate-900 dark:text-slate-100 min-h-screen">
 
+{% if messages %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+    {% for message in messages %}
+    <div class="p-4 mb-4 rounded-xl font-bold text-sm flex items-center gap-3 fade-up
+        {% if message.tags == 'error' %}bg-red-100 text-red-700 border border-red-200
+        {% elif message.tags == 'success' %}bg-green-100 text-green-700 border border-green-200
+        {% else %}bg-blue-100 text-blue-700 border border-blue-200{% endif %}">
+        <span class="material-symbols-outlined">{% if message.tags == 'error' %}error{% elif message.tags == 'success' %}check_circle{% else %}info{% endif %}</span>
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
 {% if not property %}
 <div class="flex flex-col items-center justify-center min-h-screen">
     <span class="material-symbols-outlined text-6xl text-slate-300 mb-4">home_work</span>

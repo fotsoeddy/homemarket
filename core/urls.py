@@ -12,11 +12,7 @@ from .views import (
     InvestmentOpportunityView,
 )
 from .message_views import MessageView, SendMessageView, PollMessagesView
-from .pay_unit_views import (
-    CreatePayunitPaymentView,
-    PaymentReturnView,
-    PaymentWebhookView,
-)
+from .views import payment_views
 from .views.contract_views import ContractDetailView, ContractPDFView
 
 app_name = 'core'
@@ -34,12 +30,10 @@ urlpatterns = [
     path('explore/', ExplorePropertyView.as_view(), name='explore'),
     path('investment/', InvestmentOpportunityView.as_view(), name='investment'),
    
-path("pay/<uuid:property_id>/<str:payment_type>/", CreatePayunitPaymentView.as_view(), name="pay"),
-path("payment/return/", PaymentReturnView.as_view(), name="payment_return"),
-path("payment/webhook/", PaymentWebhookView.as_view(), name="webhook"),
+    path("pay/<uuid:property_id>/<str:payment_type>/", payment_views.initiate_payment, name="pay"),
+    path("payment/return/", payment_views.payment_return, name="payment_return"),
+    path("payment/webhook/", payment_views.payment_webhook, name="payment_webhook"),
 
-path('contract/<uuid:contract_id>/', ContractDetailView.as_view(), name='contract_detail'),
-path('contract/<uuid:contract_id>/pdf/', ContractPDFView.as_view(), name='contract_pdf'),
- 
-
+    path('contract/<uuid:contract_id>/', ContractDetailView.as_view(), name='contract_detail'),
+    path('contract/<uuid:contract_id>/pdf/', ContractPDFView.as_view(), name='contract_pdf'),
 ]

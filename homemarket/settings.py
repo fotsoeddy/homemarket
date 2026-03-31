@@ -211,4 +211,25 @@ PAYUNIT_API_KEY = config("PAYUNIT_API_KEY", default="")
 PAYUNIT_BASE_URL = config("PAYUNIT_BASE_URL", default="https://gateway.payunit.net")
 PAYUNIT_USERNAME = config("PAYUNIT_USERNAME", default="")
 PAYUNIT_PASSWORD = config("PAYUNIT_PASSWORD", default="")
-PAYUNIT_MODE = config("PAYUNIT_MODE", default="test")
+PAYUNIT_MODE = config("PAYUNIT_MODE", default="sandbox")
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'core': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+}

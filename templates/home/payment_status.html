@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{% load static %}
+<html class="light" lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Statut du paiement | Home Market</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#000080",
+                        accent: "#D4AF37",
+                        success: "#10b981",
+                        error: "#ef4444",
+                        warning: "#f59e0b",
+                        "surface-light": "#f8fafc",
+                        "surface-dark": "#0f172a",
+                    },
+                    fontFamily: {
+                        sans: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .animate-in { opacity: 0; transform: translateY(20px); animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+        .success-bg { background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.1), transparent); }
+        .error-bg { background: radial-gradient(circle at top right, rgba(239, 68, 68, 0.1), transparent); }
+        .pending-bg { background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.1), transparent); }
+        .glass { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    </style>
+</head>
+<body class="bg-surface-light dark:bg-surface-dark text-slate-800 dark:text-slate-200 min-h-screen flex items-center justify-center p-6">
+
+<div class="max-w-lg w-full bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-[0_32px_64px_-12px_rgba(0,0,128,0.12)] border border-slate-100 dark:border-slate-800 overflow-hidden animate-in relative items-center">
+    
+    {% if payment.status == "SUCCESS" %}
+        <div class="absolute inset-0 success-bg pointer-events-none"></div>
+    {% elif payment.status == "FAILED" %}
+        <div class="absolute inset-0 error-bg pointer-events-none"></div>
+    {% else %}
+        <div class="absolute inset-0 pending-bg pointer-events-none"></div>
+    {% endif %}
+
+    <div class="px-8 pt-12 pb-10 flex flex-col items-center relative z-10">
+        
+        <!-- Status Icon -->
+        {% if payment.status == "SUCCESS" %}
+            <div class="w-28 h-28 rounded-full bg-success/10 border-4 border-success/20 flex items-center justify-center mb-8 shadow-lg shadow-success/10">
+                <span class="material-symbols-rounded text-success text-6xl">check_circle</span>
+            </div>
+            <h1 class="text-4xl font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight">Paiement Réussi !</h1>
+            <p class="text-slate-500 dark:text-slate-400 text-center text-lg leading-relaxed mb-8">Votre transaction a été validée. Votre contrat est en cours de génération.</p>
+        {% elif payment.status == "FAILED" %}
+            <div class="w-28 h-28 rounded-full bg-error/10 border-4 border-error/20 flex items-center justify-center mb-8 shadow-lg shadow-error/10">
+                <span class="material-symbols-rounded text-error text-6xl">error</span>
+            </div>
+            <h1 class="text-4xl font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight">Échec du Paiement</h1>
+            <p class="text-slate-500 dark:text-slate-400 text-center text-lg leading-relaxed mb-8">Nous n'avons pas pu traiter votre paiement. Veuillez vérifier vos informations ou réessayer.</p>
+        {% else %}
+            <div class="w-28 h-28 rounded-full bg-warning/10 border-4 border-warning/20 flex items-center justify-center mb-8 shadow-lg shadow-warning/10 animate-pulse">
+                <span class="material-symbols-rounded text-warning text-6xl">pending</span>
+            </div>
+            <h1 class="text-4xl font-extrabold text-slate-900 dark:text-white mb-3 tracking-tight">Traitement en cours</h1>
+            <p class="text-slate-500 dark:text-slate-400 text-center text-lg leading-relaxed mb-8">Nous attendons la confirmation finale de PayUnit. Cela ne devrait prendre que quelques secondes.</p>
+        {% endif %}
+
+        <!-- Info Card -->
+        <div class="w-full bg-slate-50 dark:bg-slate-800/40 rounded-3xl p-6 border border-slate-100 dark:border-slate-800/60 glass mb-8">
+            <div class="space-y-4">
+                <div class="flex justify-between items-center text-sm">
+                    <span class="text-slate-400 font-semibold uppercase tracking-wider text-[11px]">Référence</span>
+                    <span class="text-slate-900 dark:text-slate-100 font-bold font-mono">{{ payment.reference }}</span>
+                </div>
+                <div class="h-px bg-slate-200/60 dark:bg-slate-700/60 w-full"></div>
+                <div class="flex justify-between items-center">
+                    <span class="text-slate-400 font-semibold uppercase tracking-wider text-[11px]">Montant Payé</span>
+                    <span class="text-2xl font-black text-primary">{{ payment.amount|floatformat:0 }} FCFA</span>
+                </div>
+                <div class="h-px bg-slate-200/60 dark:bg-slate-700/60 w-full"></div>
+                <div class="flex justify-between items-center text-sm">
+                    <span class="text-slate-400 font-semibold uppercase tracking-wider text-[11px]">Propriété</span>
+                    <span class="text-slate-900 dark:text-slate-100 font-bold truncate max-w-[200px]">{{ property.title }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="w-full space-y-4">
+            {% if payment.status == "SUCCESS" %}
+                <a href="{% url 'core:message' %}" class="flex items-center justify-center w-full h-16 bg-primary hover:bg-primary/90 text-white rounded-2xl font-bold text-lg transition-all duration-300 shadow-xl shadow-primary/25 hover:shadow-primary/40 active:scale-[0.98]">
+                    <span class="material-symbols-rounded mr-3">chat</span>
+                    Contacter le vendeur
+                </a>
+                <a href="/" class="flex items-center justify-center w-full h-16 border-2 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-2xl font-bold text-lg transition-all duration-300">
+                    Retour à l'accueil
+                </a>
+            {% else %}
+                <a href="{% url 'core:property_detail' property.id %}" class="flex items-center justify-center w-full h-16 bg-primary hover:bg-primary/90 text-white rounded-2xl font-bold text-lg transition-all duration-300 shadow-xl shadow-primary/25 active:scale-[0.98]">
+                    <span class="material-symbols-rounded mr-3">refresh</span>
+                    Réessayer
+                </a>
+                <a href="/" class="flex items-center justify-center w-full h-16 border-2 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-2xl font-bold text-lg transition-all duration-300">
+                    Abandonner
+                </a>
+            {% endif %}
+        </div>
+
+        <p class="mt-8 text-center text-[11px] font-bold text-slate-400 uppercase tracking-[0.3em]">Propulsé par HomeMarket Pay</p>
+    </div>
+</div>
+
+<script>
+    // Simple auto-refresh for pending status
+    {% if payment.status == "PENDING" %}
+    setTimeout(() => {
+        window.location.reload();
+    }, 5000);
+    {% endif %}
+</script>
+
+</body>
+</html>
